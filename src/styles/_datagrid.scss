@@ -1,0 +1,102 @@
+.dx-widget {
+	font-family: var(--font-family) !important;
+	font-size: var(--font-size) !important;
+}
+.dx-datagrid-headers {
+	.dx {
+		&-header-row,
+		&-row td,
+		&-datagrid-rowsview,
+		&-datagrid-headers {
+			@apply border-0 #{!important};
+		}
+
+		&-row td {
+			@apply bg-primary text-black px-6 py-5 #{!important};
+		}
+	}
+}
+
+.dx-datagrid-rowsview {
+	table {
+		tbody {
+			tr {
+				&:nth-child(odd) {
+					@apply bg-gray-200;
+				}
+
+				&:hover {
+					background: #beebe5;
+					transition: background 0.4s;
+					/* Geçiş efekti */
+
+					.table-actions {
+						@apply opacity-100;
+						color: white !important;
+						/* Yeni eklenen satır */
+					}
+				}
+
+				&:hover td {
+					color: white !important;
+					transition: color 0.4s;
+					/* Geçiş efekti */
+				}
+			}
+			td {
+				@apply text-black border-0 align-middle py-[14px] px-6 #{!important};
+			}
+		}
+	}
+}
+
+.dx-datagrid-pager,
+.dx-row,
+.dx-datagrid-rowsview,
+.dx-datagrid-headers {
+	@apply border-0 #{!important};
+}
+
+.has-scroll {
+	.dx-datagrid-headers,
+	.dx-datagrid-rowsview {
+		@apply pr-4 #{!important};
+	}
+
+	.dx-datagrid-rowsview {
+		@apply max-h-64 overflow-y-auto;
+
+		&::-webkit-scrollbar {
+			@apply w-1 rounded-full bg-light;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			@apply rounded-full bg-light-500;
+		}
+	}
+}
+
+.dx-page {
+	@apply flex items-center justify-center text-light-500 text-sm font-medium w-8 h-8 bg-light p-0 transition-all #{!important};
+
+	&-indexes {
+		@apply flex #{!important};
+	}
+
+	&:hover,
+	&.dx-selection {
+		@apply text-white bg-primary #{!important};
+	}
+}
+
+.clickable-row {
+	.dx-data-row {
+		@apply cursor-pointer;
+	}
+}
+
+.relative-row {
+	.dx-row {
+		@apply relative;
+	}
+}

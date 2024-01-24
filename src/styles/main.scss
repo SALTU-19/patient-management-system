@@ -1,0 +1,21 @@
+// fonts
+@use "fonts";
+@use "icon-fonts";
+
+// base
+@use "variables";
+@use "table";
+@use "module";
+@use "base";
+
+//pages
+@use "_cow-subpages";
+
+// library
+@use "datepicker";
+@use "datagrid";
+@use "devextreme/scss/bundles/dx.greenmist.scss";
+@use "filterBuilder";
+
+// settings
+@use "crontab";

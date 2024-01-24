@@ -1,0 +1,68 @@
+html,
+body {
+	color: var(--text-color);
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+	background-color: var(--body-color);
+}
+
+input,
+textarea {
+	@apply bg-transparent;
+
+	&:focus {
+		@apply outline-none;
+	}
+}
+.dx-texteditor-input {
+	border: 1px solid #afc7c0 !important;
+}
+
+.dx-texteditor-input:focus {
+	border: 1px solid #005845 !important;
+}
+
+.dx-datagrid-content {
+	.dx-datagrid-table {
+		.dx-row {
+			.dx-editor-cell {
+				max-width: 0;
+				padding-top: 0 !important;
+			}
+		}
+	}
+}
+
+.dx-datagrid-focus-overlay {
+	border: none !important;
+}
+
+.cancel-button {
+	@apply text-light-500 hover:bg-primary hover:text-white font-semibold ml-auto rounded-md pt-2 pb-2 pl-6 pr-6 text-xs;
+}
+
+.dp__action {
+	color: #008b7f;
+}
+
+.dp__cancel {
+	color: #c1c1c1;
+}
+
+.dp__cancel:hover {
+	color: #ff0000;
+}
+
+.dp__selection_preview {
+	font-weight: 500;
+	color: #ec6608;
+	font-size: 18px;
+}
+
+.dp__selection_preview {
+	display: none;
+}
+
+.dp__action_buttons {
+	width: 100%;
+}

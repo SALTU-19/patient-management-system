@@ -1,0 +1,13 @@
+.cow-detail {
+  &-header {
+    @apply flex flex-wrap justify-between gap-4 border-b border-light-300 py-4 px-8;
+  }
+
+  &-params {
+    @apply flex flex-wrap items-center gap-x-6 text-sm;
+  }
+
+  &-filters {
+    @apply flex flex-wrap lg:flex-nowrap flex-grow items-center gap-4 max-w-5xl ml-auto;
+  }
+}

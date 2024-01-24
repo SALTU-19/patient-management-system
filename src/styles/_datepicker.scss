@@ -1,0 +1,71 @@
+.dp {
+	&__theme_light {
+		--dp-primary-color: var(--primary-color);
+		--dp-hover-color: var(--light-color);
+		--dp-scroll-bar-background: var(--light-color);
+		--dp-scroll-bar-color: var(--primary-color);
+	}
+
+	&__menu,
+	&__calendar,
+	&__overlay_cell,
+	&__input,
+	&__calendar_header {
+		font-family: var(--font-family);
+	}
+
+	&__calendar {
+		&_header {
+			@apply font-semibold;
+		}
+	}
+
+	&__menu {
+		@apply text-sm border-light-300 rounded-lg overflow-hidden p-4 transition-none;
+	}
+
+	&__input {
+		@apply text-xs border-0 bg-light rounded-lg py-2.5 pl-3 pr-14;
+
+		&_icon {
+			@apply text-light-500 left-auto right-0;
+		}
+	}
+
+	&__clear_icon {
+		@apply text-light-500 w-5 h-5 right-6;
+	}
+
+	&__inner_nav {
+		@apply text-light-500;
+	}
+
+	&__active_date {
+		@apply bg-primary;
+	}
+
+	&__action {
+		@apply font-semibold;
+	}
+
+	&__main > div {
+		@apply h-full;
+	}
+
+	&__input_wrap,
+	&__pointer {
+		@apply h-full;
+	}
+}
+
+.datepicker-outline {
+	.dp__input {
+		@apply text-primary-700 border border-light-500 bg-transparent;
+	}
+}
+
+.datepicker-error {
+	.dp__input {
+		@apply text-primary-700 border border-rose-500 bg-transparent;
+	}
+}

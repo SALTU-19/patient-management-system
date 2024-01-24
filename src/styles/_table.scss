@@ -1,0 +1,50 @@
+.table {
+	@apply w-full text-sm text-left;
+
+	tbody {
+		tr {
+			&:nth-child(odd) {
+				@apply bg-light-100;
+			}
+		}
+	}
+
+	th {
+		@apply text-xs font-normal p-6;
+	}
+
+	td {
+		@apply py-2.5 px-6;
+	}
+
+	&-actions {
+		@apply relative flex justify-center items-center gap-x-6 text-primary opacity-0 transition-all z-10;
+	}
+}
+
+.table-responsive {
+	@apply w-full max-w-full overflow-x-auto  rounded-xl;
+
+	@media (max-width: 768px) {
+		th,
+		td {
+			@apply whitespace-nowrap;
+		}
+	}
+}
+
+.column-title {
+	@apply flex justify-center items-center gap-x-2;
+}
+
+.has-scroll {
+	@apply pr-4 overflow-y-auto;
+
+	&::-webkit-scrollbar {
+		@apply w-1 h-2 rounded-full bg-light;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply rounded-full bg-light-500;
+	}
+}
