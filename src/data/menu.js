@@ -8,7 +8,7 @@ const menuList = [
     {
         id: 1,
         name: 'Doctor',
-        path: '/doctors',
+        path: '/',
         icon: shallowRef(IconDoctor),
         text: 'Doctor',
     },
