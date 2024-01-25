@@ -24,7 +24,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/Organization/create`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Organization/create`,
                     data: {
                         name: context.state.createOrganizationCreds.name,
                     },
@@ -49,7 +49,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/Organization/${uid}/update`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Organization/${uid}/update`,
                     data: {
                         name: context.state.createOrganizationCreds.name,
                     },
@@ -74,7 +74,7 @@ export default {
             try {
                 await axios({
                     method: "delete",
-                    url: `${import.meta.env.VITE_API_URL}/api/Organization/${uid}/delete`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Organization/${uid}/delete`,
                 }).then((res) => {
                     response = res;
                 });
@@ -97,7 +97,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/Organization/${uid}/get`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Organization/${uid}/get`,
                 }).then((res) => {
                     response = res;
                 });
@@ -119,7 +119,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/Organization/getAll`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Organization/getAll`,
                 }).then((res) => {
                     response = res;
                 });

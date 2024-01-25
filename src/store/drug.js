@@ -38,7 +38,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/DrugHistory/create`,
+                    url: `https://patient-management-api.azurewebsites.net/api/DrugHistory/create`,
                     data: {
                         name: context.state.createDrugHistoryCreds.name,
                         startingDate: context.state.createDrugHistoryCreds.startingDate,
@@ -70,7 +70,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/DrugHistory/${uid}/update`,
+                    url: `https://patient-management-api.azurewebsites.net/api/DrugHistory/${uid}/update`,
                     data: {
                         name: context.state.updateDrugHistoryCreds.name,
                         startingDate: context.state.updateDrugHistoryCreds.startingDate,
@@ -100,7 +100,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/DrugHistory/${uid}/delete`,
+                    url: `https://patient-management-api.azurewebsites.net/api/DrugHistory/${uid}/delete`,
                 }).then((res) => {
                     response = res;
                 });
@@ -125,7 +125,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/DrugHistory/${uid}/get`,
+                    url: `https://patient-management-api.azurewebsites.net/api/DrugHistory/${uid}/get`,
                 }).then((res) => {
                     response = res;
                 });
@@ -147,7 +147,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/DrugHistory/getAll`,
+                    url: `https://patient-management-api.azurewebsites.net/api/DrugHistory/getAll`,
                 }).then((res) => {
                     response = res;
                 });

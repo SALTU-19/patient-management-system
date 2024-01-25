@@ -46,7 +46,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/PeriodicVisitHistory/create`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PeriodicVisitHistory/create`,
                     data: {
                         date: context.state.createPeriodicVisitHistoryCreds.date,
                         vki: context.state.createPeriodicVisitHistoryCreds.vki,
@@ -79,7 +79,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/PeriodicVisitHistory/${uid}/update`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PeriodicVisitHistory/${uid}/update`,
                     data: {
                         date: context.state.updatePeriodicVisitHistoryCreds.date,
                         vki: context.state.updatePeriodicVisitHistoryCreds.vki,
@@ -111,7 +111,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/PeriodicVisitHistory/${uid}/delete`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PeriodicVisitHistory/${uid}/delete`,
                 }).then((res) => {
                     response = res;
                 });
@@ -136,7 +136,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/PeriodicVisitHistory/${uid}/get`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PeriodicVisitHistory/${uid}/get`,
                 }).then((res) => {
                     response = res;
                 });
@@ -158,7 +158,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/PeriodicVisitHistory/getAll`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PeriodicVisitHistory/getAll`,
                 }).then((res) => {
                     response = res;
                 });

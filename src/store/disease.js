@@ -30,7 +30,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/DiseaseHistory/create`,
+                    url: `https://patient-management-api.azurewebsites.net/api/DiseaseHistory/create`,
                     data: {
                         name: context.state.createDiseaseHistoryCreds.name,
                         explonation: context.state.createDiseaseHistoryCreds.explonation,
@@ -59,7 +59,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/DiseaseHistory/${uid}/update`,
+                    url: `https://patient-management-api.azurewebsites.net/api/DiseaseHistory/${uid}/update`,
                     data: {
                         name: context.state.updateDiseaseHistoryCreds.name,
                         explonation: context.state.updateDiseaseHistoryCreds.explonation,
@@ -87,7 +87,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/DiseaseHistory/${uid}/delete`,
+                    url: `https://patient-management-api.azurewebsites.net/api/DiseaseHistory/${uid}/delete`,
                 }).then((res) => {
                     response = res;
                 });
@@ -112,7 +112,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/DiseaseHistory/${uid}/get`,
+                    url: `https://patient-management-api.azurewebsites.net/api/DiseaseHistory/${uid}/get`,
                 }).then((res) => {
                     response = res;
                 });
@@ -134,7 +134,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/DiseaseHistory/getAll`,
+                    url: `https://patient-management-api.azurewebsites.net/api/DiseaseHistory/getAll`,
                 }).then((res) => {
                     response = res;
                 });

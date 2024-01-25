@@ -53,7 +53,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/Hospital/create`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Hospital/create`,
                     data: {
                         name: context.state.createHospitalCreds.name,
                         coordinate: context.state.createHospitalCreds.coordinate,
@@ -88,7 +88,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/Hospital/${uid}/update`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Hospital/${uid}/update`,
                     data: {
                         name: context.state.updateHospitalCreds.name,
                         coordinate: context.state.updateHospitalCreds.coordinate,
@@ -120,7 +120,7 @@ export default {
             try {
                 await axios({
                     method: "delete",
-                    url: `${import.meta.env.VITE_API_URL}/api/Hospital/${uid}/delete`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Hospital/${uid}/delete`,
                 }).then((res) => {
                     response = res;
                 });
@@ -143,7 +143,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/Hospital/${uid}/get`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Hospital/${uid}/get`,
                 }).then((res) => {
                     response = res;
                 });
@@ -165,7 +165,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/Hospital/getAll`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Hospital/getAll`,
                 }).then((res) => {
                     response = res;
                 });

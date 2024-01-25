@@ -54,7 +54,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/Auth/signin`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Auth/signin`,
                     data: {
                         email: context.state.loginCreds.email,
                         password: context.state.loginCreds.password,
@@ -84,7 +84,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/User/create`,
+                    url: `https://patient-management-api.azurewebsites.net/api/User/create`,
                     data: {
                         email: context.state.createUserCreds.email,
                         name: context.state.createUserCreds.name,
@@ -117,7 +117,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/User/${uid}/update`,
+                    url: `https://patient-management-api.azurewebsites.net/api/User/${uid}/update`,
                     data: {
                         email: context.state.updateUserCreds.email,
                         name: context.state.updateUserCreds.name,
@@ -147,7 +147,7 @@ export default {
             try {
                 await axios({
                     method: "delete",
-                    url: `${import.meta.env.VITE_API_URL}/api/User/${uid}/delete`,
+                    url: `https://patient-management-api.azurewebsites.net/api/User/${uid}/delete`,
                 }).then((res) => {
                     response = res;
                 });
@@ -170,7 +170,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/User/${uid}/get`,
+                    url: `https://patient-management-api.azurewebsites.net/api/User/${uid}/get`,
                 }).then((res) => {
                     response = res;
                 });
@@ -193,7 +193,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/User/getAll`,
+                    url: `https://patient-management-api.azurewebsites.net/api/User/getAll`,
                 }).then((res) => {
                     response = res;
                 });

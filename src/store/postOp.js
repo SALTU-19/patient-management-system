@@ -48,7 +48,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/PostOp/create`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PostOp/create`,
                     data: {
                         doctorId: context.state.createPostOpCreds.doctorId,
                         doctorComment: context.state.createPostOpCreds.doctorComment,
@@ -82,7 +82,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/PostOp/${uid}/update`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PostOp/${uid}/update`,
                     data: {
                         doctorId: context.state.updatePostOpCreds.doctorId,
                         doctorComment: context.state.updatePostOpCreds.doctorComment,
@@ -115,7 +115,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/PostOp/${uid}/delete`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PostOp/${uid}/delete`,
                 }).then((res) => {
                     response = res;
                 });
@@ -140,7 +140,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/PostOp/${uid}/get`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PostOp/${uid}/get`,
                 }).then((res) => {
                     response = res;
                 });
@@ -162,7 +162,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/PostOp/getAll`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PostOp/getAll`,
                 }).then((res) => {
                     response = res;
                 });

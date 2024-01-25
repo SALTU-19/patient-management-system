@@ -51,7 +51,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/PreOp/create`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PreOp/create`,
                     data: {
                         targetWeight: context.state.createPreOpCreds.targetWeight,
                         doctorId: context.state.createPreOpCreds.doctorId,
@@ -85,7 +85,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/PreOp/${uid}/update`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PreOp/${uid}/update`,
                     data: {
                         targetWeight: context.state.updatePreOpCreds.targetWeight,
                         doctorId: context.state.updatePreOpCreds.doctorId,
@@ -118,7 +118,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/PreOp/${uid}/delete`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PreOp/${uid}/delete`,
                 }).then((res) => {
                     response = res;
                 });
@@ -142,7 +142,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/PreOp/${uid}/get`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PreOp/${uid}/get`,
                 }).then((res) => {
                     response = res;
                 });
@@ -164,7 +164,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/PreOp/getAll`,
+                    url: `https://patient-management-api.azurewebsites.net/api/PreOp/getAll`,
                 }).then((res) => {
                     response = res;
                 });

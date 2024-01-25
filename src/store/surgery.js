@@ -34,7 +34,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/SurgeryHistory/create`,
+                    url: `https://patient-management-api.azurewebsites.net/api/SurgeryHistory/create`,
                     data: {
                         name: context.state.createSurgeryHistoryCreds.name,
                         date: context.state.createSurgeryHistoryCreds.date,
@@ -64,7 +64,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/SurgeryHistory/${uid}/update`,
+                    url: `https://patient-management-api.azurewebsites.net/api/SurgeryHistory/${uid}/update`,
                     data: {
                         name: context.state.updateSurgeryHistoryCreds.name,
                         date: context.state.updateSurgeryHistoryCreds.date,
@@ -93,7 +93,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/SurgeryHistory/${uid}/delete`,
+                    url: `https://patient-management-api.azurewebsites.net/api/SurgeryHistory/${uid}/delete`,
                 }).then((res) => {
                     response = res;
                 });
@@ -110,7 +110,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/SurgeryHistory/${uid}/get`,
+                    url: `https://patient-management-api.azurewebsites.net/api/SurgeryHistory/${uid}/get`,
                 }).then((res) => {
                     response = res;
                 });
@@ -132,7 +132,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/SurgeryHistory/getAll`,
+                    url: `https://patient-management-api.azurewebsites.net/api/SurgeryHistory/getAll`,
                 }).then((res) => {
                     response = res;
                 });

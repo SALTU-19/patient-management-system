@@ -64,7 +64,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/Patient/create`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Patient/create`,
                     data: {
                         name: context.state.createPatientCreds.name,
                         surname: context.state.createPatientCreds.surname,
@@ -101,7 +101,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/Patient/${uid}/update`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Patient/${uid}/update`,
                     data: {
                         name: context.state.updatePatientCreds.name,
                         surname: context.state.updatePatientCreds.surname,
@@ -138,7 +138,7 @@ export default {
             try {
                 await axios({
                     method: "delete",
-                    url: `${import.meta.env.VITE_API_URL}/api/Patient/${uid}/delete`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Patient/${uid}/delete`,
                 }).then((res) => {
                     response = res;
                 });
@@ -161,7 +161,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/Patient/${uid}/get`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Patient/${uid}/get`,
                 }).then((res) => {
                     response = res;
                 });
@@ -183,7 +183,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/Patient/getAll`,
+                    url: `https://patient-management-api.azurewebsites.net/api/Patient/getAll`,
                 }).then((res) => {
                     response = res;
                 });

@@ -46,7 +46,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/IrregularVisitHistory/create`,
+                    url: `https://patient-management-api.azurewebsites.net/api/IrregularVisitHistory/create`,
                     data: {
                         date: context.state.createIrregularVisitHistoryCreds.date,
                         vki: context.state.createIrregularVisitHistoryCreds.vki,
@@ -79,7 +79,7 @@ export default {
             try {
                 await axios({
                     method: "post",
-                    url: `${import.meta.env.VITE_API_URL}/api/IrregularVisitHistory/${uid}/update`,
+                    url: `https://patient-management-api.azurewebsites.net/api/IrregularVisitHistory/${uid}/update`,
                     data: {
                         date: context.state.updateIrregularVisitHistoryCreds.date,
                         vki: context.state.updateIrregularVisitHistoryCreds.vki,
@@ -111,7 +111,7 @@ export default {
             try {
                 await axios({
                     method: "delete",
-                    url: `${import.meta.env.VITE_API_URL}/api/IrregularVisitHistory/${uid}/delete`,
+                    url: `https://patient-management-api.azurewebsites.net/api/IrregularVisitHistory/${uid}/delete`,
                 }).then((res) => {
                     response = res;
                 });
@@ -134,7 +134,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/IrregularVisitHistory/${uid}/get`,
+                    url: `https://patient-management-api.azurewebsites.net/api/IrregularVisitHistory/${uid}/get`,
                 }).then((res) => {
                     response = res;
                 });
@@ -156,7 +156,7 @@ export default {
             try {
                 await axios({
                     method: "get",
-                    url: `${import.meta.env.VITE_API_URL}/api/IrregularVisitHistory/getAll`,
+                    url: `https://patient-management-api.azurewebsites.net/api/IrregularVisitHistory/getAll`,
                 }).then((res) => {
                     response = res;
                 });
