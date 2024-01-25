@@ -36,9 +36,13 @@ export default {
 <template>
 	<div class="flex flex-row items-center justify-evenly mx-4 gap-6">
 		<div>
-			<div class="w-32 h-32 rounded-full overflow-hidden mb-5">
+			<div v-if="image" class="w-32 h-32 rounded-full overflow-hidden mb-5">
 				<!-- <img src="@/components/assets/ProfilePicture.png" alt="Profile Picture" /> -->
 				<img :src="image" alt="Profile Picture" />
+			</div>
+			<div v-if="!image" class="w-32 h-32 rounded-full overflow-hidden mb-5">
+				<img src="@/components/assets/blank-profile.png" alt="Profile Picture" />
+				<!-- <img :src="image" alt="Profile Picture" /> -->
 			</div>
 		</div>
 		<div>

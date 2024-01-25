@@ -4,11 +4,28 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
     {
+        path: "/sign-in",
+        name: "SignIn",
+        component: () => import(/* webpackChunkName: "sign-in" */ "../views/auth/sign-in.vue"),
+        meta: {
+            layout: "Auth",
+        },
+    },
+    {
         path: '/',
         name: "doctors",
         component: () =>
             import("@/views/doctors/list/index.vue"),
+        beforeEnter: (to, from, next) => {
+            const user = localStorage.getItem("user");
+            if (user) {
+                next();
+            } else {
+                next("/sign-in");
+            }
+        }
     },
+
     {
         path: '/schedule',
         name: "schedule",
@@ -62,35 +79,6 @@ const routes = [
         component: () =>
             import("@/views/hospitals/list/index.vue"),
     },
-    // {
-    //     path: '/login',
-    //     name: 'Login',
-    //     component: () => import('find/views/Login.vue'),
-    //     meta: {
-    //         guest: true
-    //     }
-    // },
-    // {
-    //     path: '/register',
-    //     name: 'Register',
-    //     component: () => import('find/views/Register.vue'),
-    //     meta: {
-    //         guest: true
-    //     }
-    // },
-    // {
-    //     path: '/profile',
-    //     name: 'Profile',
-    //     component: () => import('find/views/Profile.vue'),
-    //     meta: {
-    //         requiresAuth: true
-    //     }
-    // },
-    // {
-    //     path: '/:pathMatch(.*)*',
-    //     name: 'NotFound',
-    //     component: () => import('find/views/NotFound.vue')
-    // }
 ]
 
 const router = createRouter({

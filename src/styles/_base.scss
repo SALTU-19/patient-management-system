@@ -14,6 +14,7 @@ textarea {
 		@apply outline-none;
 	}
 }
+
 .dx-texteditor-input {
 	border: 1px solid #afc7c0 !important;
 }
@@ -27,7 +28,7 @@ textarea {
 		.dx-row {
 			.dx-editor-cell {
 				max-width: 0;
-				padding-top: 0 !important;
+				padding-top: 0;
 			}
 		}
 	}

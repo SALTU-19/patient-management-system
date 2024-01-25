@@ -1,7 +1,7 @@
 <script>
 import IconAngleDown from "../icons/IconAngleDown.vue";
 import IconCheck from "../icons/IconCheck.vue";
-import Checkbox from "./Checkbox.vue";
+import Checkbox from "./CheckBox.vue";
 
 export default {
     name: "TheSelect",

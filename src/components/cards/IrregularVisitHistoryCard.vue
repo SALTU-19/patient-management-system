@@ -28,7 +28,7 @@ export default {
 
 </script>
 <template>
-    <DraggableCard :title="irregularVisit.month" @expand="isExpanded = $event">
+    <DraggableCard :title="irregularVisit.date" @expand="isExpanded = $event">
         <div class="grid grid-row-2 gap-4 items-start justify-between w-full mt-3" v-if="isExpanded">
             <div class="flex flex-row items-center  w-full ">
                 <div class="text-sm">

@@ -14,18 +14,15 @@ export default {
             mobile: "",
             hospital: "",
             image: "",
-            options: [
+            roleName: "",
+            roles: [
                 {
                     id: 1,
-                    name: "Option 1",
+                    name: "Admin",
                 },
                 {
                     id: 2,
-                    name: "Option 2",
-                },
-                {
-                    id: 3,
-                    name: "Option 3",
+                    name: "Doctor",
                 },
             ],
             hospitals: [],
@@ -89,7 +86,7 @@ export default {
                     this.surname === "" ||
                     this.email === "" ||
                     this.mobile === "" ||
-                    this.selectJob === "") &&
+                    this.roleName === "") &&
                 this.showAddDoctorModal
             ) {
                 this.isError = true;
@@ -128,10 +125,11 @@ export default {
             this.setCreateUserCreds({
                 email: this.email,
                 // organizationUId: this.currentUserRole.organizationUId,
-                roleName: "User",
+                roleName: this.roleName,
                 name: this.name,
                 surname: this.surname,
                 mobile: this.mobile,
+                userImage: this.image,
                 password: "123456789",
             });
             let response = await this.createUser();
@@ -220,6 +218,8 @@ export default {
                                 <Input v-model="mobile" placeholder="Mobile" outline
                                     :error="(mobile === '' || !isMobileValid()) && isError" />
                                 <Select outline v-model="hospital" placeholder="Hospital" :options="hospitals" />
+                                <Select outline v-model="roleName" placeholder="Select Role" :options="roles"
+                                    :error="isError && roleName === ''" />
                                 <div v-if="isError" class="text-red-500 text-s text-secondary-800 text-center">
                                     {{ message }}
                                 </div>

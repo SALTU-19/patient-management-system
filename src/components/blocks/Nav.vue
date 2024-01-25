@@ -40,9 +40,7 @@ export default {
             <component :is="menu.icon">
             </component>
         </router-link> -->
-		<div class="flex justify-center mb-10">
-			<span class="font-bold text-black">Hastane</span>
-		</div>
+
 
 		<router-link v-for="menu in menuList" :key="menu.id" :to="menu.path" @click="handleMenuItemClick(menu)">
 			<div :class="{ 'rounded-full bg-white': selectedMenuItem === menu.id }"

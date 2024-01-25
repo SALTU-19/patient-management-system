@@ -2,21 +2,21 @@ import axios from "axios";
 
 export default {
     mutations: {
-        setCreateIrregularVisitHistoryCreds(state, { date, vki, ewl, img, bloodSituation, doctorComment, patientUID }) {
+        setCreateIrregularVisitHistoryCreds(state, { date, vki, ewl, img, bloadSituation, doctorComment, patientUID }) {
             state.createIrregularVisitHistoryCreds.date = date;
             state.createIrregularVisitHistoryCreds.vki = vki;
             state.createIrregularVisitHistoryCreds.ewl = ewl;
             state.createIrregularVisitHistoryCreds.img = img;
-            state.createIrregularVisitHistoryCreds.bloodSituation = bloodSituation;
+            state.createIrregularVisitHistoryCreds.bloadSituation = bloadSituation;
             state.createIrregularVisitHistoryCreds.doctorComment = doctorComment;
             state.createIrregularVisitHistoryCreds.patientUID = patientUID;
         },
-        setUpdateIrregularVisitHistoryCreds(state, { date, vki, ewl, img, bloodSituation, doctorComment }) {
+        setUpdateIrregularVisitHistoryCreds(state, { date, vki, ewl, img, bloadSituation, doctorComment }) {
             state.updateIrregularVisitHistoryCreds.date = date;
             state.updateIrregularVisitHistoryCreds.vki = vki;
             state.updateIrregularVisitHistoryCreds.ewl = ewl;
             state.updateIrregularVisitHistoryCreds.img = img;
-            state.updateIrregularVisitHistoryCreds.bloodSituation = bloodSituation;
+            state.updateIrregularVisitHistoryCreds.bloadSituation = bloadSituation;
             state.updateIrregularVisitHistoryCreds.doctorComment = doctorComment;
         }
     },
@@ -26,7 +26,7 @@ export default {
             vki: 0,
             ewl: 0,
             img: [],
-            bloodSituation: "",
+            bloadSituation: "",
             doctorComment: "",
             patientUID: "",
         },
@@ -35,7 +35,7 @@ export default {
             vki: 0,
             ewl: 0,
             img: [],
-            bloodSituation: "",
+            bloadSituation: "",
             doctorComment: "",
         },
     },
@@ -52,7 +52,7 @@ export default {
                         vki: context.state.createIrregularVisitHistoryCreds.vki,
                         ewl: context.state.createIrregularVisitHistoryCreds.ewl,
                         img: context.state.createIrregularVisitHistoryCreds.img,
-                        bloodSituation: context.state.createIrregularVisitHistoryCreds.bloodSituation,
+                        bloadSituation: context.state.createIrregularVisitHistoryCreds.bloadSituation,
                         doctorComment: context.state.createIrregularVisitHistoryCreds.doctorComment,
                         patientUID: context.state.createIrregularVisitHistoryCreds.patientUID,
                     },
@@ -85,7 +85,7 @@ export default {
                         vki: context.state.updateIrregularVisitHistoryCreds.vki,
                         ewl: context.state.updateIrregularVisitHistoryCreds.ewl,
                         img: context.state.updateIrregularVisitHistoryCreds.img,
-                        bloodSituation: context.state.updateIrregularVisitHistoryCreds.bloodSituation,
+                        bloadSituation: context.state.updateIrregularVisitHistoryCreds.bloadSituation,
                         doctorComment: context.state.updateIrregularVisitHistoryCreds.doctorComment,
                     },
                 }).then((res) => {

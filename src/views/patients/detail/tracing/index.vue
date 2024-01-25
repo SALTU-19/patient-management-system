@@ -12,6 +12,9 @@ import { mapActions } from 'vuex';
 import AddPeriodicVisitHistoryModal from '@/views/patients/detail/tracing/periodicVisitHistoryModal/addModal.vue';
 import EditPeriodicVisitHistoryModal from '@/views/patients/detail/tracing/periodicVisitHistoryModal/editModal.vue';
 import DeletePeriodicVisitHistoryModal from '@/views/patients/detail/tracing/periodicVisitHistoryModal/deleteModal.vue';
+import AddIrregularVisitHistoryModal from '@/views/patients/detail/tracing/irregularVisitHistoryModal/addModal.vue';
+import EditIrregularVisitHistoryModal from '@/views/patients/detail/tracing/irregularVisitHistoryModal/editModal.vue';
+import DeleteIrregularVisitHistoryModal from '@/views/patients/detail/tracing/irregularVisitHistoryModal/deleteModal.vue';
 import { AtomSpinner } from 'epic-spinners';
 export default {
     name: 'PatientTracing',
@@ -26,6 +29,9 @@ export default {
         AddPeriodicVisitHistoryModal,
         EditPeriodicVisitHistoryModal,
         DeletePeriodicVisitHistoryModal,
+        AddIrregularVisitHistoryModal,
+        EditIrregularVisitHistoryModal,
+        DeleteIrregularVisitHistoryModal,
         AtomSpinner,
     },
     props: {},
@@ -82,9 +88,13 @@ export default {
             showAddPeriodicVisitHistoryModal: false,
             showEditPeriodicVisitHistoryModal: false,
             showDeletePeriodicVisitHistoryModal: false,
+            showAddIrregularVisitHistoryModal: false,
+            showEditIrregularVisitHistoryModal: false,
+            showDeleteIrregularVisitHistoryModal: false,
             uid: null,
             isSaving: false,
             selectedPeriodicVisitHistory: null,
+            selectedIrregularVisitHistory: null,
             isLoading: true,
         }
     },
@@ -114,10 +124,22 @@ export default {
                 this.showEditPeriodicVisitHistoryModal = true;
             }
         },
+        checkEditIrregularVisitHistory(val, item) {
+            if (val) {
+                this.selectedIrregularVisitHistory = item;
+                this.showEditIrregularVisitHistoryModal = true;
+            }
+        },
         checkDeletePeriodicVisitHistory(val, item) {
             if (val) {
                 this.uid = item.uId;
                 this.showDeletePeriodicVisitHistoryModal = true;
+            }
+        },
+        checkDeleteIrregularVisitHistory(val, item) {
+            if (val) {
+                this.uid = item.uId;
+                this.showDeleteIrregularVisitHistoryModal = true;
             }
         },
         async _getPatient() {
@@ -142,19 +164,34 @@ export default {
             this.image = response.image;
 
             this.periodicVisits = response.periodicVisitHistory;
+            this.irregularVisits = response.irregularVisitHistory;
             let i = 0;
             this.periodicVisits.forEach((element) => {
                 element.date = this.convertDateFormat(element.date);
                 // element.month = this.calculateMonthDifference(new Date(element.date), new Date());
                 element.month = i + 1 + "st Month";
+                element.status = "Completed";
+                i++;
+            });
+
+            this.irregularVisits.forEach((element) => {
+                element.date = this.convertDateFormat(element.date);
+                // element.month = this.calculateMonthDifference(new Date(element.date), new Date());
+                element.status = "Completed";
                 i++;
             });
 
             this.isLoading = false;
         },
         clickAddHistory() {
-            this.showAddPeriodicVisitHistoryModal = true;
+            // this.showAddPeriodicVisitHistoryModal = true;
+            if (this.selectedMenuItem == 1) {
+                this.showAddPeriodicVisitHistoryModal = true;
+            } else if (this.selectedMenuItem == 2) {
+                this.showAddIrregularVisitHistoryModal = true;
+            }
         },
+
 
     },
     async mounted() {
@@ -221,7 +258,8 @@ export default {
                 <div v-if="selectedMenuItem == 2" class="flex flex-col gap-6 mt-6 overflow-y-auto"
                     style="max-height: 300px;">
                     <IrregularVisitHistoryCard v-for="irregularVisit in irregularVisits" :key="irregularVisit.id"
-                        :irregularVisit="irregularVisit" />
+                        :irregularVisit="irregularVisit" @edit="checkEditIrregularVisitHistory($event, irregularVisit)"
+                        @delete="checkDeleteIrregularVisitHistory($event, irregularVisit)" />
                 </div>
             </div>
         </template>
@@ -233,5 +271,13 @@ export default {
         @close-modal="showEditPeriodicVisitHistoryModal = false" @is-saving="isSaving = $event" />
     <DeletePeriodicVisitHistoryModal :showDeletePeriodicVisitHistoryModal="showDeletePeriodicVisitHistoryModal" :uid="uid"
         @close-modal="showDeletePeriodicVisitHistoryModal = false" @is-saving="isSaving = $event" />
+
+    <AddIrregularVisitHistoryModal :showAddIrregularVisitHistoryModal="showAddIrregularVisitHistoryModal" :patientUID="id"
+        @close-modal="showAddIrregularVisitHistoryModal = false" @is-saving="isSaving = $event" />
+    <EditIrregularVisitHistoryModal :showEditIrregularVisitHistoryModal="showEditIrregularVisitHistoryModal"
+        :selectedIrregularVisitHistory="selectedIrregularVisitHistory"
+        @close-modal="showEditIrregularVisitHistoryModal = false" @is-saving="isSaving = $event" />
+    <DeleteIrregularVisitHistoryModal :showDeleteIrregularVisitHistoryModal="showDeleteIrregularVisitHistoryModal"
+        :uid="uid" @close-modal="showDeleteIrregularVisitHistoryModal = false" @is-saving="isSaving = $event" />
 </template>
 <style lang="scss" scoped></style>

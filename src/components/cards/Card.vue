@@ -33,7 +33,7 @@ export default {
 </script>
 <template>
     <div class="flex flex-col items-center justify-center bg-gray-300 rounded-2xl px-4 py-6 cursor-pointer">
-        <img src="@/components/assets/TimeProgress.png" />
+        <img src="@/components/assets/timeProgress.png" />
         <div class="text-l mt-2 font-semibold">{{ title }}</div>
     </div>
 </template>

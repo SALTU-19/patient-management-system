@@ -2,13 +2,14 @@
 
 // import Auth from "@/components/layout/Auth.vue";
 import Default from "@/components/layout/Default.vue";
+import Auth from "@/components/layout/Auth.vue";
 
 
 export default {
   name: "App",
   components: {
     Default,
-    // Auth,
+    Auth,
   },
   data() {
     return {
